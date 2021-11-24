@@ -1,1 +1,1 @@
-# typescript-inversify-api
+# products-ms-api
