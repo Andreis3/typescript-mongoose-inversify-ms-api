@@ -21,7 +21,7 @@
     },
     "plugins": ["@typescript-eslint", "prettier"],
     "rules": {
-        "eslint-disable-next-line prettier/prettier": "off",
+        "prettier/prettier": "off",
         "eslint-disable prettier/prettier": "off",
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/no-new": "off",
@@ -35,6 +35,10 @@
         "@typescript-eslint/comma-spacing": "off",
         "@typescript-eslint/no-unused-expressions": "off",
         "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/array-type": "off",
+        "@typescript-eslint/method-signature-style": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/naming-convention": [
             "error",
             {

@@ -1,14 +1,16 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "src",
-    "module": "CommonJS",
-    "target": "es2021",
-    "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src"]
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "src",
+        "module": "CommonJS",
+        "target": "es2021",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "include": ["src"]
 }
