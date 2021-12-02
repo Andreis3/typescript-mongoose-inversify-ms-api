@@ -1,2 +1,9 @@
 node_modules
 dist
+coverage
+./data
+.eslintrc.js
+jest.config.js
+jest-mongodb-config.js
+jest.config.integration.js
+jest.config.unit.js

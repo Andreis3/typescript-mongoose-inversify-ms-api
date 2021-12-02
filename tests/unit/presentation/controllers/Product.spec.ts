@@ -1,0 +1,3 @@
+describe('Product controllers', () => {
+    test('', () => {});
+});

@@ -1,16 +1,17 @@
 {
     "compilerOptions": {
         "outDir": "./dist",
-        "rootDir": "src",
-        "module": "CommonJS",
+        "module": "commonjs",
         "target": "es2021",
         "esModuleInterop": true,
         "allowJs": true,
         "sourceMap": true,
+        "rootDirs": ["src", "tests"],
+        "baseUrl": "src",
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     },
-    "include": ["src"]
+    "include": ["src", "tests/unit"]
 }
