@@ -1,20 +1,20 @@
 import { inject, injectable } from 'inversify';
 import TYPES from '../../../infra/constants/Type';
-import { IRegisterUser } from './user/interface/IRegisterUser';
+import { IRegisterUserRoute } from './user/interface/IRegisterUser';
 import { IRoutes } from './interface/IRoutes';
 import { Application } from 'express';
 
 @injectable()
 export class Routes implements IRoutes {
     private readonly _baseUrl: string;
-    private readonly _registerUser: IRegisterUser;
+    private readonly _registerUserRoute: IRegisterUserRoute;
 
-    constructor(@inject(TYPES.RegisterUser) registerUser: IRegisterUser) {
+    constructor(@inject(TYPES.RegisterUserRoute) registerUserRoute: IRegisterUserRoute) {
         this._baseUrl = '/api';
-        this._registerUser = registerUser;
+        this._registerUserRoute = registerUserRoute;
     }
 
     public configureEndpoints(app: Application): void {
-        this._registerUser.applyRoutes(this._baseUrl, app);
+        this._registerUserRoute.applyRoutes(this._baseUrl, app);
     }
 }

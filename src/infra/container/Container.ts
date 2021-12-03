@@ -11,8 +11,8 @@ import { UserRepository } from '../../repository/user-repository/UserRepository'
 import { IUserService } from '../../application/services/user/interface/IUserService';
 import { IUserController } from '../../presentation/controllers/interface/IUserController';
 import { UserController } from '../../presentation/controllers/UserController';
-import { IRegisterUser } from '../../main/config/routes/user/interface/IRegisterUser';
-import { RegisterUser } from '../../main/config/routes/user/RegisterUser';
+import { IRegisterUserRoute } from '../../main/config/routes/user/interface/IRegisterUser';
+import { RegisterUserRoute } from '../../main/config/routes/user/RegisterUserRoute';
 import { Routes } from '../../main/config/routes/Routes';
 import { IRoutes } from '../../main/config/routes/interface/IRoutes';
 import { RegisterUseCase } from '../../application/use-case/RegisterUseCase';
@@ -28,7 +28,7 @@ container.bind<IUserRepository>(TYPES.UserRepository).to(UserRepository).inSingl
 container.bind<IUserMapper>(TYPES.UserMapper).to(UserMapper).inTransientScope();
 container.bind<IUserService>(TYPES.UserService).to(UserRepository).inTransientScope();
 container.bind<IUserController>(TYPES.UserController).to(UserController).inTransientScope();
-container.bind<IRegisterUser>(TYPES.RegisterUser).to(RegisterUser).inTransientScope();
+container.bind<IRegisterUserRoute>(TYPES.RegisterUserRoute).to(RegisterUserRoute).inTransientScope();
 container.bind<IRoutes>(TYPES.Routes).to(Routes).inTransientScope();
 container.bind<UseCase<IUserModel, IUserEntity>>(TYPES.RegisterUseCase).to(RegisterUseCase).inTransientScope();
 
