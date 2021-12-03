@@ -15,6 +15,10 @@ import { IRegisterUser } from '../../main/config/routes/user/interface/IRegister
 import { RegisterUser } from '../../main/config/routes/user/RegisterUser';
 import { Routes } from '../../main/config/routes/Routes';
 import { IRoutes } from '../../main/config/routes/interface/IRoutes';
+import { RegisterUseCase } from '../../application/use-case/RegisterUseCase';
+import { UseCase } from '../../infra/base';
+import { IUserModel } from '../../application/domain/user/IUserModel';
+import { IUserEntity } from 'repository/entities/user/IUserEntity';
 
 const container = new Container();
 
@@ -26,5 +30,6 @@ container.bind<IUserService>(TYPES.UserService).to(UserRepository).inTransientSc
 container.bind<IUserController>(TYPES.UserController).to(UserController).inTransientScope();
 container.bind<IRegisterUser>(TYPES.RegisterUser).to(RegisterUser).inTransientScope();
 container.bind<IRoutes>(TYPES.Routes).to(Routes).inTransientScope();
+container.bind<UseCase<IUserModel, IUserEntity>>(TYPES.RegisterUseCase).to(RegisterUseCase).inTransientScope();
 
 export { container };

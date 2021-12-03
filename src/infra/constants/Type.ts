@@ -7,4 +7,5 @@ export default {
     UserController: Symbol.for('UserController'),
     RegisterUser: Symbol.for('RegisterUser'),
     Routes: Symbol.for('Routes'),
+    RegisterUseCase: Symbol.for('RegisterUseCase'),
 };
