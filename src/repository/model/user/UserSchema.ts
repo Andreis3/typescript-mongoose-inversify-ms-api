@@ -1,7 +1,10 @@
+import { injectable } from 'inversify';
 import { Schema, model } from 'mongoose';
+import { IUserSchema } from './interface/IUserSchema';
 
-export default class UserSchema {
-    static getSchema() {
+@injectable()
+export class UserSchema implements IUserSchema {
+    getSchema() {
         const userSchema = new Schema({
             email: {
                 type: String,

@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/main/Server.ts",
+        "test:unit": "jest -c jest.config.unit.js --runInBand",
         "build": "npm run compile-typescript",
         "compile-typescript": "tsc"
     },

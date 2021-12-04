@@ -1,3 +1,0 @@
-describe('Product controllers', () => {
-    test('', () => {});
-});

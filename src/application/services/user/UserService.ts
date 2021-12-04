@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { IUserModel } from 'application/domain/user/IUserModel';
-import TYPES from 'infra/constants/Type';
+import TYPES from '../../../infra/constants/Type';
 import { IUserEntity } from '../../../repository/entities/user/IUserEntity';
 import { IUserRepository } from '../../../repository/user-repository/interface/IUserRepository';
 import { IUserService } from './interface/IUserService';
@@ -13,6 +13,7 @@ export class UserService implements IUserService {
     }
 
     async addNewUser(user: IUserModel): Promise<IUserEntity> {
-        return await this._userRepository.addNewUser(user);
+        const newUser = await this._userRepository.addNewUser(user);
+        return newUser;
     }
 }

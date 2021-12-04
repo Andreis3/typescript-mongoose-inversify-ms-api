@@ -8,4 +8,5 @@ export default {
     RegisterUserRoute: Symbol.for('RegisterUserRoute'),
     Routes: Symbol.for('Routes'),
     RegisterUseCase: Symbol.for('RegisterUseCase'),
+    UserSchema: Symbol.for('UserSchema'),
 };

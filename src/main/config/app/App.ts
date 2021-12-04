@@ -25,7 +25,7 @@ export default class App implements IApp {
         this._app.use(bodyParserJson);
         this._app.use(cors);
         this._app.use(contentType);
-        await this.routes.configureEndpoints(this._app);
+        this.routes.configureEndpoints(this._app);
         this._app.listen(this._port, () => {
             console.log(`Sever running at http://localhost:${this._port}`);
         });
