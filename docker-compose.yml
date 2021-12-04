@@ -8,17 +8,14 @@ services:
             - '27017:27017'
     api:
         container_name: api-container
-        image: node:16
+        image: node:15
         working_dir: /usr/src/typescript-mongoose-inversify-ms-api
         restart: always
-        command: bash -c "npm install --force && npm run debug"
-        environment:
-            - MONGO_URL=mongodb://mongo:27017/products-db
+        command: bash -c "npm install --only=prod --force && npm start"
         volumes:
-            - ./dist/:/usr/src/typescript-mongoose-inversify-ms-api/dist/
+            - ./dist:/usr/src/typescript-mongoose-inversify-ms-api/dist
             - ./package.json:/usr/src/typescript-mongoose-inversify-ms-api/package.json
         ports:
             - '3000:3000'
-            - '9222:9222'
         links:
             - mongo

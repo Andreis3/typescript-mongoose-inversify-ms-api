@@ -1,6 +1,6 @@
 module.exports = {
     roots: ['<rootDir>'],
-    collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+    collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/main/**'],
 
     // The directory where Jest should output its coverage files
     coverageDirectory: 'coverage',
@@ -10,7 +10,7 @@ module.exports = {
 
     // The test environment that will be used for testing
     testEnvironment: 'node',
-    //preset: '@shelf/jest-mongodb',
+    preset: '@shelf/jest-mongodb',
     // watchPathIgnorePatterns: ['globalConfig'],
 
     // A map from regular expressions to paths to transformers
