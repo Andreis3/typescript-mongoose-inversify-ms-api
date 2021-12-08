@@ -1,8 +1,8 @@
 import { inject, injectable } from 'inversify';
-import TYPES from '../../../infra/constants/Type';
-import { IRegisterUserRoute } from './user/interface/IRegisterUser';
-import { IRoutes } from './interface/IRoutes';
 import { Application } from 'express';
+import TYPES from '@/infra/constants/Type';
+import { IRegisterUserRoute } from '@/main/config/routes/user/interface/IRegisterUserRoute';
+import { IRoutes } from '@/main/config/routes/interface/IRoutes';
 
 @injectable()
 export class Routes implements IRoutes {

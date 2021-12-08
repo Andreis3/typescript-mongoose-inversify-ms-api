@@ -1,9 +1,9 @@
 import { Model } from 'mongoose';
-import { IUserModel } from '../../../../src/application/domain/user/IUserModel';
-import { IUserEntity } from '../../../../src/repository/entities/user/IUserEntity';
-import { IUserMapper } from '../../../../src/repository/mappers/user/interface/IUserMapper';
-import { IUserSchema } from '../../../../src/repository/model/user/interface/IUserSchema';
-import { UserRepository } from '../../../../src/repository/user-repository/UserRepository';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
+import { IUserMapper } from '@/repository/mappers/user/interface/IUserMapper';
+import { IUserSchema } from '@/repository/model/user/interface/IUserSchema';
+import { UserRepository } from '@/repository/user-repository/UserRepository';
 
 const makeUserSchemaFake = (): IUserSchema.SchemaName => {
     const UserSchema = Model;

@@ -1,7 +1,7 @@
-import { IUserModel } from '../../../application/domain/user/IUserModel';
-import { UseCase } from '../../../infra/base';
-import { IUserEntity } from '../../../repository/entities/user/IUserEntity';
-import { UserController } from '../../../../src/presentation/controllers/UserController';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import { UseCase } from '@/infra/base';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
+import { UserController } from '@/presentation/controllers/UserController';
 
 const makeUserEntity = (): IUserEntity => {
     const user = {

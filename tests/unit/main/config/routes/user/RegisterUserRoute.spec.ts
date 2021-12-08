@@ -1,7 +1,7 @@
-import { IUserModel } from '../../../../../../src/application/domain/user/IUserModel';
-import { RegisterUserRoute } from '../../../../../../src/main/config/routes/user/RegisterUserRoute';
-import { IUserController } from '../../../../../../src/presentation/controllers/interface/IUserController';
-import { IUserEntity } from '../../../../../../src/repository/entities/user/IUserEntity';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import { RegisterUserRoute } from '@/main/config/routes/user/RegisterUserRoute';
+import { IUserController } from '@/presentation/controllers/interface/IUserController';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
 
 const baseUrl = '/api';
 

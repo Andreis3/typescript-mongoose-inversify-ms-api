@@ -1,10 +1,10 @@
 import { inject, injectable } from 'inversify';
 import { Application, Request, Response } from 'express';
-import TYPES from '../../../../infra/constants/Type';
-import { IUserController } from '../../../../presentation/controllers/interface/IUserController';
-import { IRegisterUserRoute } from './interface/IRegisterUser';
-import { IUserModel } from '../../../../application/domain/user/IUserModel';
-import { IUserEntity } from '../../../../repository/entities/user/IUserEntity';
+import TYPES from '@/infra/constants/Type';
+import { IUserController } from '@/presentation/controllers/interface/IUserController';
+import { IRegisterUserRoute } from '@/main/config/routes/user/interface/IRegisterUserRoute';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
 
 @injectable()
 export class RegisterUserRoute implements IRegisterUserRoute {

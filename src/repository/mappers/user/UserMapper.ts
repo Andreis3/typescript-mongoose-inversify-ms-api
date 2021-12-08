@@ -1,8 +1,8 @@
 import { injectable } from 'inversify';
-import { IUserModel } from '../../../application/domain/user/IUserModel';
-import { Mapper } from '../../../infra/base';
-import { IUserEntity } from '../../../repository/entities/user/IUserEntity';
-import { IUserMapper } from './interface/IUserMapper';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import { Mapper } from '@/infra/base';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
+import { IUserMapper } from '@/repository/mappers/user/interface/IUserMapper';
 
 @injectable()
 export class UserMapper extends Mapper<IUserModel, IUserEntity> implements IUserMapper {

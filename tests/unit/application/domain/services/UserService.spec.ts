@@ -1,7 +1,7 @@
-import { IUserModel } from '../../../../../src/application/domain/user/IUserModel';
-import { UserService } from '../../../../../src/application/services/user/UserService';
-import { IUserEntity } from '../../../../../src/repository/entities/user/IUserEntity';
-import { IUserRepository } from '../../../../../src/repository/user-repository/interface/IUserRepository';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import { UserService } from '@/application/services/user/UserService';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
+import { IUserRepository } from '@/repository/user-repository/interface/IUserRepository';
 
 const makeUserEntity = (): IUserEntity => {
     const user = {

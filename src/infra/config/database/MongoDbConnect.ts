@@ -1,7 +1,7 @@
-import Env from '../../../main/config/app/Env';
 import { injectable } from 'inversify';
 import mongoose from 'mongoose';
-import IMongoDbConnect from './interface/IMongoDbConnect';
+import Env from '@/main/config/app/Env';
+import IMongoDbConnect from '@/infra/config/database/interface/IMongoDbConnect';
 
 @injectable()
 export default class MongoDbConnect implements IMongoDbConnect {

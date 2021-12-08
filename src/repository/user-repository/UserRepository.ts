@@ -1,10 +1,10 @@
 import { inject, injectable } from 'inversify';
-import { IUserSchema } from '../../repository/model/user/interface/IUserSchema';
-import { IUserModel } from '../../application/domain/user/IUserModel';
-import TYPES from '../../infra/constants/Type';
-import { IUserEntity } from '../../repository/entities/user/IUserEntity';
-import { IUserMapper } from '../../repository/mappers/user/interface/IUserMapper';
-import { IUserRepository } from './interface/IUserRepository';
+import { IUserSchema } from '@/repository/model/user/interface/IUserSchema';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import TYPES from '@/infra/constants/Type';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
+import { IUserMapper } from '@/repository/mappers/user/interface/IUserMapper';
+import { IUserRepository } from '@/repository/user-repository/interface/IUserRepository';
 
 @injectable()
 export class UserRepository implements IUserRepository {

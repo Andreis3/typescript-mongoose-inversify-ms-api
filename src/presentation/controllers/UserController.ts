@@ -1,9 +1,9 @@
 import { inject, injectable } from 'inversify';
-import TYPES from '../../infra/constants/Type';
-import { IUserModel } from '../../application/domain/user/IUserModel';
-import { IUserEntity } from '../../repository/entities/user/IUserEntity';
-import { IUserController } from './interface/IUserController';
-import { UseCase } from '../../infra/base';
+import TYPES from '@/infra/constants/Type';
+import { IUserModel } from '@/application/domain/user/IUserModel';
+import { IUserEntity } from '@/repository/entities/user/IUserEntity';
+import { IUserController } from '@/presentation/controllers/interface/IUserController';
+import { UseCase } from '@/infra/base';
 
 @injectable()
 export class UserController implements IUserController {

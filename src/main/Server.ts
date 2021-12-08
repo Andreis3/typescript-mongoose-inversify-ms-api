@@ -1,8 +1,9 @@
 import 'reflect-metadata';
-import TYPE from '../infra/constants/Type';
-import { IApp } from './config/app/interface/IApp';
-import { container } from '../infra/container/Container';
-import Env from './config/app/Env';
+import 'module-alias/register';
+import TYPE from '@/infra/constants/Type';
+import { IApp } from '@/main/config/app/interface/IApp';
+import { container } from '@/infra/container/Container';
+import Env from '@/main/config/app/Env';
 
 const app = container.get<IApp>(TYPE.App);
 

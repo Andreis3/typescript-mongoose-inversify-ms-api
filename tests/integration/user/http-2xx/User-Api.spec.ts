@@ -1,9 +1,9 @@
+import request from 'supertest';
 import { Express } from 'express';
 import Type from '@/infra/constants/Type';
 import { container } from '@/infra/container/Container';
 import { IApp } from '@/main/config/app/interface/IApp';
-import request from 'supertest';
-import MongoHelper from '../../../../src/infra/config/database/MongoDbConnect';
+import MongoHelper from '@/infra/config/database/MongoDbConnect';
 
 const mongo = new MongoHelper();
 const server: Express = container.get<IApp>(Type.App).start();

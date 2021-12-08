@@ -1,6 +1,6 @@
 import { injectable } from 'inversify';
 import { Schema, model } from 'mongoose';
-import { IUserSchema } from './interface/IUserSchema';
+import { IUserSchema } from '@/repository/model/user/interface/IUserSchema';
 
 @injectable()
 export class UserSchema implements IUserSchema {

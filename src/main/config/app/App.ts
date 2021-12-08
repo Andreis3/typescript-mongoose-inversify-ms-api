@@ -1,12 +1,12 @@
 import { inject, injectable } from 'inversify';
 import express, { Express } from 'express';
-import { IApp } from './interface/IApp';
-import { bodyParserJson, bodyParserUrlencoded } from '../../middlewares/BodyParser';
-import { cors } from '../../middlewares/Cors';
-import { contentType } from '../../middlewares/ContentType';
-import TYPES from '../../../infra/constants/Type';
-import IMongoDbConnect from '../../../infra/config/database/interface/IMongoDbConnect';
-import { IRoutes } from '../routes/interface/IRoutes';
+import { IApp } from '@/main/config/app/interface/IApp';
+import { bodyParserJson, bodyParserUrlencoded } from '@/main/middlewares/BodyParser';
+import { cors } from '@/main/middlewares/Cors';
+import { contentType } from '@/main/middlewares/ContentType';
+import TYPES from '@/infra/constants/Type';
+import IMongoDbConnect from '@/infra/config/database/interface/IMongoDbConnect';
+import { IRoutes } from '@/main/config/routes/interface/IRoutes';
 
 @injectable()
 export default class App implements IApp {
