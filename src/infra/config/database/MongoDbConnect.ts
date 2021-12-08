@@ -1,3 +1,4 @@
+import Env from '../../../main/config/app/Env';
 import { injectable } from 'inversify';
 import mongoose from 'mongoose';
 import IMongoDbConnect from './interface/IMongoDbConnect';
@@ -6,7 +7,7 @@ import IMongoDbConnect from './interface/IMongoDbConnect';
 export default class MongoDbConnect implements IMongoDbConnect {
     private readonly _stringConnection: string;
     constructor() {
-        this._stringConnection = process.env.MONGO_URL || 'mongodb://localhost:27017/products-db';
+        this._stringConnection = process.env.MONGO_URL || Env.mongoUrl;
     }
 
     async connect(): Promise<void> {

@@ -11,13 +11,11 @@ import { IRoutes } from '../routes/interface/IRoutes';
 @injectable()
 export default class App implements IApp {
     private readonly _app: Express;
-    private readonly _port: number;
     private readonly _mongoDbConnect: IMongoDbConnect;
     private readonly _routes: IRoutes;
 
     constructor(@inject(TYPES.Routes) routes: IRoutes, @inject(TYPES.MongoDbConnect) mongoDbConnect: IMongoDbConnect) {
         this._app = express();
-        this._port = 3000;
         this._routes = routes;
         this._mongoDbConnect = mongoDbConnect;
     }
