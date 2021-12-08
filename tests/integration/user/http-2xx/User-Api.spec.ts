@@ -17,7 +17,7 @@ describe('User Routes', () => {
     });
 
     describe('POST /user', () => {
-        test('Should return 200 on user', async () => {
+        test('Should return 201 on user', async () => {
             const result = await request(server).post('/api/register').send({
                 first_name: 'Andrei',
                 last_name: 'Santos',
