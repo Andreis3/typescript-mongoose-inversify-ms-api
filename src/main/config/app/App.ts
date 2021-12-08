@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import express, { Application } from 'express';
+import express, { Express } from 'express';
 import { IApp } from './interface/IApp';
 import { bodyParserJson, bodyParserUrlencoded } from '../../middlewares/BodyParser';
 import { cors } from '../../middlewares/Cors';
@@ -10,26 +10,29 @@ import { IRoutes } from '../routes/interface/IRoutes';
 
 @injectable()
 export default class App implements IApp {
-    private readonly _app: Application;
+    private readonly _app: Express;
     private readonly _port: number;
-    @inject(TYPES.MongoDbConnect) private readonly mongoDbConnect: IMongoDbConnect;
-    @inject(TYPES.Routes) private readonly routes: IRoutes;
+    private readonly _mongoDbConnect: IMongoDbConnect;
+    private readonly _routes: IRoutes;
 
-    constructor() {
+    constructor(@inject(TYPES.Routes) routes: IRoutes, @inject(TYPES.MongoDbConnect) mongoDbConnect: IMongoDbConnect) {
         this._app = express();
         this._port = 3000;
+        this._routes = routes;
+        this._mongoDbConnect = mongoDbConnect;
     }
 
-    async start(): Promise<void> {
+    start(): Express {
         this._app.use(bodyParserUrlencoded);
         this._app.use(bodyParserJson);
         this._app.use(cors);
         this._app.use(contentType);
-        this.routes.configureEndpoints(this._app);
-        this._app.listen(this._port, () => {
-            console.log(`Sever running at http://localhost:${this._port}`);
-        });
-        await this.mongoDbConnect.connect().then(() => {
+        this._routes.configureEndpoints(this._app);
+        return this._app;
+    }
+
+    async connectMongo(): Promise<void> {
+        await this._mongoDbConnect.connect().then(() => {
             console.log('MongoDB connected');
         });
     }

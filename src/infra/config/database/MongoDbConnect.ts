@@ -6,11 +6,22 @@ import IMongoDbConnect from './interface/IMongoDbConnect';
 export default class MongoDbConnect implements IMongoDbConnect {
     private readonly _stringConnection: string;
     constructor() {
-        this._stringConnection = 'mongodb://localhost:27017/products';
+        this._stringConnection = process.env.MONGO_URL || 'mongodb://localhost:27017/products-db';
     }
 
-    async connect(): Promise<typeof mongoose> {
+    async connect(): Promise<void> {
         await mongoose.connect(this._stringConnection);
-        return mongoose;
+    }
+
+    async disconnect(): Promise<void> {
+        await mongoose.disconnect();
+    }
+
+    async dropDatabase(): Promise<void> {
+        await mongoose.connection.dropDatabase();
+    }
+
+    async clearCollection(collectionName: string): Promise<void> {
+        await mongoose.connection.db.dropCollection(collectionName);
     }
 }

@@ -1,1 +1,1 @@
-# products-ms-api
+# typescript-mongoose-inversify-ms-api
