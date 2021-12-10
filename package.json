@@ -68,6 +68,6 @@
         "node": "16.x"
     },
     "_moduleAliases": {
-        "@": "dist"
+        "@": "src"
     }
 }
